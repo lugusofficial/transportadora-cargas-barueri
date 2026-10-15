@@ -39,7 +39,10 @@
 .cena__fatos { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); padding-top: var(--space-5); margin-top: var(--space-2); border-top: 1px solid var(--nevoa); font-size: var(--step--1); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-on-accent); max-width: 40rem; }
 .cena__seta { position: absolute; z-index: 1; left: var(--gutter); bottom: var(--space-5); width: 2.75rem; height: 2.75rem; display: grid; place-items: center; color: var(--color-on-accent); border-radius: var(--radius-pill); outline: 1px solid currentColor; outline-offset: -1px; animation: desce 2.4s ease-in-out infinite; }
 @keyframes desce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
-@media (min-width: 48em) { .cena__seta { display: none; } .cena { padding-bottom: var(--space-9); } }
+/* Tela larga: cabecalho e topo num container mais largo (texto mais a esquerda, alinhado ao logo) e texto no meio da altura. */
+.container--topo { width: min(100% - 2 * var(--gutter), 96rem); }
+@media (min-width: 48em) { .cena__seta { display: none; } .cena { align-items: center; padding-block: calc(var(--altura-header) + var(--space-7)) var(--space-8); } }
+@media (min-width: 90em) { .container--topo { width: min(100% - 2 * var(--space-9), 96rem); } }
 
 /* Reveal */
 .js-reveal [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 700ms ease, transform 700ms cubic-bezier(.2,.8,.2,1); }
