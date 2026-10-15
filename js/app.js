@@ -12,7 +12,11 @@
   var cena = document.querySelector('.cena');
   if (header && cena) {
     var limite = 0;
-    var medir = function () { limite = cena.getBoundingClientRect().bottom + window.scrollY - header.offsetHeight; };
+    var medir = function () {
+      /* O topo sobe exatamente a altura real do cabecalho; um valor fixo deixava uma faixa clara acima do video. */
+      document.documentElement.style.setProperty('--altura-header', header.getBoundingClientRect().height + 'px');
+      limite = cena.getBoundingClientRect().bottom + window.scrollY - header.offsetHeight;
+    };
     var avaliar = function () { header.classList.toggle('is-sobre', window.scrollY < limite - 10); };
     medir(); avaliar();
     window.addEventListener('scroll', avaliar, { passive: true });

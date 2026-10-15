@@ -3,7 +3,7 @@
 /* Decorative effect allowed on this page (max one): None. A seta do topo usa o unico @keyframes. */
 
 /* Cores da marca original: dourado do logo (so sobre o marinho) e cinza azulado para texto secundario no escuro. */
-:root { --ouro: #DEBD73; --nevoa: #AEB8C4; --altura-header: 4.5rem; }
+:root { --ouro: #DEBD73; --nevoa: #AEB8C4; --altura-header: 5rem; }
 
 .label { font-weight: var(--weight-body-medium); }
 .cabeca { display: grid; gap: var(--space-4); max-width: 46rem; }
